@@ -21,7 +21,7 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-nodejs-${{ hashFiles('pnpm-lock.yaml') }}
-      - name: Install dependencies
+      - name: Install nodejs dependencies
         run: pnpm install
 
       - name: Configure Dendron to use GitHub PAT for remote vaults
@@ -31,7 +31,7 @@ jobs:
 
       - name: Initialize dependencies for publishing
         run: pnpm dendron publish init
-      - name: Restore .next js cache
+      - name: Restore .next cache
         uses: actions/cache@v4
         with:
           path: .next/.next/cache
