@@ -21,7 +21,7 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-nodejs-${{ hashFiles('pnpm-lock.yaml') }}
-      - name: Install nodejs dependencies
+      - name: Install dependencies
         run: pnpm install
 
       - name: Configure Dendron to use GitHub PAT for remote vaults
